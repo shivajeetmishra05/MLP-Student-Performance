@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 model = joblib.load('score_predictor.pkl')
-scaler = joblib.load('scaler.pkl')
+sc = joblib.load('scaler.pkl')
 ohe = joblib.load('encoder.pkl')
 
 cat_cols = ['school', 'sex', 'address', 'famsize', 'Pstatus',
