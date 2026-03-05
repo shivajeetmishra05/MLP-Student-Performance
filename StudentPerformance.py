@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import numpy as np
 
 model = joblib.load('score_predictor.pkl')
 sc = joblib.load('scaler.pkl')
