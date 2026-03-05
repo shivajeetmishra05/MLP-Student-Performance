@@ -42,15 +42,10 @@ if st.button("Predict"):
 
     input_df = pd.DataFrame([input_data])
 
-    # Encode categorical
     encoded = ohe.transform(input_df[cat_cols])
     encoded_df = pd.DataFrame(encoded, columns=ohe.get_feature_names_out(cat_cols))
-
-    # Scale numerical
     scaled = sc.transform(input_df[num_cols])
     scaled_df = pd.DataFrame(scaled, columns=num_cols)
-
-    # Combine in same order as training
     final_input = np.hstack((encoded, scaled))
 
     prediction = model.predict(final_input)[0]
